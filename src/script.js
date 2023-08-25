@@ -1,12 +1,10 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import * as dat from 'lil-gui'
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
 
 
-const gui = new dat.GUI()
 
 
 const canvas = document.querySelector('canvas.webgl')
@@ -37,8 +35,11 @@ fontLoader.load(
         textGeometry.center()
 
         const material = new THREE.MeshNormalMaterial();
+
+
         const text = new THREE.Mesh(textGeometry, material);
         scene.add(text)
+
 
         const donutGeometry = new THREE.TorusBufferGeometry(0.3, 0.2, 20, 45);
 
